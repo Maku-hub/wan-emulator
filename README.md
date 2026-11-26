@@ -1,5 +1,11 @@
 # WAN Emulator
 
+[![CI](https://github.com/Maku-hub/wan-emulator/actions/workflows/ci.yml/badge.svg)](https://github.com/Maku-hub/wan-emulator/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Debian%2013-blue)](#requirements)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![Release](https://img.shields.io/github/v/release/Maku-hub/wan-emulator)](https://github.com/Maku-hub/wan-emulator/releases)
+
 [Polska wersja](README.pl.md)
 
 A WAN link emulator for Linux with a web panel. The host sits between two devices as a transparent bridge and adds delay, jitter, packet loss, bandwidth limits and other impairments, separately for each direction. The emulation is done by the kernel's `tc` / netem; the panel applies the settings, shows live statistics and provides a REST API.
