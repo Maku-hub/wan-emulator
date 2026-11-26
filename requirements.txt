@@ -1,0 +1,6 @@
+# Runtime dependencies. On Debian 13 install the python3-* packages instead
+# (scripts/install_packages.sh); this file is for other systems and CI.
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.5
+PyYAML>=6.0

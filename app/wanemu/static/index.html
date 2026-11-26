@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAN Emulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1 data-i18n="app.title">WAN Emulator</h1>
+    <span id="version" class="muted"></span>
+  </div>
+  <div id="status" class="badge stopped"></div>
+  <div class="actions">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><button data-lang="pl">PL</button>
+    </div>
+    <button id="btn-start" class="primary"></button>
+    <button id="btn-stop" class="danger" data-i18n="btn.stop"></button>
+  </div>
+</header>
+
+<div id="toast" hidden></div>
+
+<main>
+  <aside>
+    <h2 data-i18n="profiles.title"></h2>
+    <ul id="profiles"></ul>
+    <div class="profile-actions">
+      <button id="btn-save" data-i18n="btn.save" data-i18n-title="btn.saveTitle"></button>
+      <button id="btn-save-as" data-i18n="btn.saveAs"></button>
+      <button id="btn-delete" class="danger-outline" data-i18n="btn.delete"></button>
+    </div>
+    <p class="muted small"><span data-i18n="profiles.loaded"></span> <b id="current-profile">—</b></p>
+  </aside>
+
+  <section class="content">
+    <div class="toolbar">
+      <span class="check"><label class="check"><input type="checkbox" id="symmetric"> <span data-i18n="sym.label"></span></label>
+        <span class="info" tabindex="0" data-i18n-tip="sym.info">i</span></span>
+      <button id="btn-reset" data-i18n="btn.reset"></button>
+    </div>
+
+    <div class="directions">
+      <div class="direction" id="dir-a_to_b">
+        <h2>A → B <span class="muted" id="lbl-a_to_b"></span>
+          <span class="info" tabindex="0" data-i18n-tip="dir.a_to_b.info">i</span></h2>
+        <div class="live">
+          <canvas id="chart-a_to_b" width="400" height="60"></canvas>
+          <div class="live-values" id="live-a_to_b"></div>
+        </div>
+        <form id="form-a_to_b" autocomplete="off"></form>
+      </div>
+      <div class="direction" id="dir-b_to_a">
+        <h2>B → A <span class="muted" id="lbl-b_to_a"></span>
+          <span class="info" tabindex="0" data-i18n-tip="dir.b_to_a.info">i</span></h2>
+        <div class="live">
+          <canvas id="chart-b_to_a" width="400" height="60"></canvas>
+          <div class="live-values" id="live-b_to_a"></div>
+        </div>
+        <form id="form-b_to_a" autocomplete="off"></form>
+      </div>
+    </div>
+
+    <details class="preview" open>
+      <summary data-i18n="preview.title"></summary>
+      <pre id="preview"></pre>
+    </details>
+  </section>
+</main>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

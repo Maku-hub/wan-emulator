@@ -1,0 +1,21 @@
+# Host settings of the WAN emulator.
+# Copy to config/wanemu.conf and adjust before running the install scripts:
+#   cp config/wanemu.conf.example config/wanemu.conf
+# The values below are examples. List your interfaces with:  ip -br link
+
+# Bridge port on side A (B -> A traffic is emulated here)
+PORT_A=eth1
+# Bridge port on side B (A -> B traffic is emulated here)
+PORT_B=eth2
+# Bridge name
+BRIDGE=br0
+
+# Management interface (SSH and web panel, not bridged)
+MGMT_IF=eth0
+# Management address in CIDR notation; leave empty to use DHCP
+MGMT_ADDRESS=192.168.100.1/24
+# Optional default gateway (empty = no Internet access after setup)
+MGMT_GATEWAY=
+
+# Web panel port
+PANEL_PORT=8080

@@ -1,0 +1,14 @@
+[tool.ruff]
+line-length = 130
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP007", "UP045"]  # keep Optional[...] in pydantic models
+
+[tool.ruff.lint.isort]
+known-first-party = ["wanemu"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
